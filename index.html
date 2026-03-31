@@ -127,7 +127,7 @@ nav {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.22);
-  padding: 18px 24px 7px;
+  padding: 28px 24px 8px;
 }
 
 nav a {
@@ -149,7 +149,8 @@ nav a:hover { color: rgba(255,255,255,0.85); }
 nav a.active {
   color: var(--white);
   border-left-color: var(--gold);
-  background: rgba(255,255,255,0.04);
+  background: rgba(255,255,255,0.09);
+  font-weight: 600;
 }
 
 .nav-index {
@@ -278,7 +279,7 @@ nav a.active {
 /* ── CONTENT WRAPPER ── */
 .content-wrap {
   max-width: 900px;
-  padding: 48px 56px 96px;
+  padding: 56px 64px 112px;
 }
 
 /* ─────────────────────────────────────────
@@ -333,15 +334,13 @@ nav a.active {
 }
 
 .phase-col {
-  padding: 0 28px 0 0;
-  border-right: 1px solid var(--rule);
-  margin-right: 28px;
+  padding: 0 32px 0 0;
+  border-right: none;
+  margin-right: 0;
 }
 
 .phase-col:last-child {
-  border-right: none;
   padding-right: 0;
-  margin-right: 0;
 }
 
 .phase-label {
@@ -605,21 +604,22 @@ select:focus, input:focus {
    SECTIONS (accordion)
 ───────────────────────────────────────── */
 .section {
-  margin-bottom: 4px;
-  border: 1px solid var(--rule);
+  margin-bottom: 2px;
+  border: none;
+  border-left: 2px solid transparent;
   background: var(--white);
-  transition: border-color 0.15s;
+  transition: border-left-color 0.15s;
 }
 
-.section:hover { border-color: var(--rule-strong); }
-.section.open { border-color: var(--ink); }
+.section:hover { border-left-color: var(--ink-faint); }
+.section.open { border-left-color: var(--gold); }
 
 .section-toggle {
   width: 100%;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 20px 24px;
+  padding: 22px 28px;
   display: flex;
   align-items: center;
   gap: 16px;
@@ -669,8 +669,7 @@ select:focus, input:focus {
 
 .section-body {
   display: none;
-  padding: 6px 28px 28px;
-  border-top: 1px solid var(--rule);
+  padding: 0 32px 40px;
 }
 
 .section.open .section-body { display: block; }
@@ -685,17 +684,17 @@ select:focus, input:focus {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--navy-mid);
-  margin: 28px 0 12px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--rule);
+  margin: 40px 0 14px;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .section-body h4 {
   font-family: var(--serif);
   font-style: italic;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--ink);
-  margin: 18px 0 6px;
+  margin: 24px 0 8px;
   font-weight: 400;
 }
 
@@ -755,12 +754,13 @@ select:focus, input:focus {
    INFOBOXES
 ───────────────────────────────────────── */
 .infobox {
-  padding: 14px 18px;
-  margin: 14px 0;
+  padding: 20px 24px;
+  margin: 20px 0;
   font-size: 13px;
-  line-height: 1.55;
-  border-left: 3px solid var(--ink-faint);
+  line-height: 1.65;
+  border-left: 2px solid var(--ink-faint);
   font-family: var(--sans);
+  border-radius: 0;
 }
 
 .infobox-title {
@@ -776,25 +776,25 @@ select:focus, input:focus {
 .infobox p:last-child { margin-bottom: 0; }
 
 .infobox.blue {
-  background: var(--navy-pale);
+  background: rgba(232,238,248,0.6);
   border-left-color: var(--navy-mid);
 }
 .infobox.blue .infobox-title { color: var(--navy); }
 
 .infobox.yellow {
-  background: var(--amber-pale);
+  background: rgba(254,248,230,0.7);
   border-left-color: var(--gold);
 }
 .infobox.yellow .infobox-title { color: #7a5a00; }
 
 .infobox.red {
-  background: var(--red-pale);
+  background: rgba(252,234,230,0.6);
   border-left-color: var(--red-mid);
 }
 .infobox.red .infobox-title { color: var(--red-mid); }
 
 .infobox.green {
-  background: var(--green-pale);
+  background: rgba(230,242,234,0.6);
   border-left-color: #2a8a4a;
 }
 .infobox.green .infobox-title { color: #1a5e2a; }
@@ -829,11 +829,11 @@ select:focus, input:focus {
 }
 
 .data-table td {
-  padding: 10px 14px;
+  padding: 13px 16px;
   border-bottom: 1px solid var(--rule);
   color: var(--ink-mid);
   vertical-align: top;
-  line-height: 1.45;
+  line-height: 1.55;
   font-weight: 400;
 }
 
@@ -935,8 +935,10 @@ select:focus, input:focus {
 
 .goal-card {
   display: flex;
-  border: 1px solid var(--rule-strong);
+  border: none;
+  border-top: 2px solid var(--rule);
   background: var(--white);
+  padding-top: 2px;
 }
 
 .goal-num {
@@ -1220,7 +1222,7 @@ h3[id^="s3-"] {
           <div class="phase-col">
             <div class="phase-label">Before You Travel</div>
             <div class="phase-item"><span class="phase-n">1</span>Discuss your mobility with the Erasmus coordinators and confirm approval.</div>
-            <div class="phase-item"><span class="phase-n">2</span>Sign the Participant Agreement before departure. All signatures must be in place before you travel.</div>
+            <div class="phase-item"><span class="phase-n">2</span>Sign the Participant Agreement before departure — retrospective signatures not permitted.</div>
             <div class="phase-item"><span class="phase-n">3</span>Sign the Learning Agreement (if required — see Section 2) and allow at least two weeks for all parties to sign.</div>
             <div class="phase-item"><span class="phase-n">4</span>Submit all travel and accommodation requests to Tamara Čakarmišova. Do not book independently unless explicitly authorised.</div>
             <div class="phase-item"><span class="phase-n">5</span>Confirm your per diem entitlement with Radka Rubricius before departure.</div>
@@ -1234,7 +1236,7 @@ h3[id^="s3-"] {
           </div>
           <div class="phase-col">
             <div class="phase-label">After You Return</div>
-            <div class="phase-item"><span class="phase-n">1</span>Submit your Participant Report via EU Survey within 30 days of returning.</div>
+            <div class="phase-item"><span class="phase-n">1</span>Submit your Participant Report via EU Survey within 30 days. Non-submission may affect the school's future Erasmus+ funding eligibility.</div>
             <div class="phase-item"><span class="phase-n">2</span>Send photos and a short written report to Tomáš Randýsek for PR and dissemination.</div>
             <div class="phase-item"><span class="phase-n">3</span>Return all signed documents, receipts, and any certificates to the coordinator within one week.</div>
             <div class="phase-item"><span class="phase-n">4</span>Complete at least one dissemination activity — a staff meeting presentation, newsletter contribution, or lesson drawing on your experience.</div>
@@ -1242,8 +1244,8 @@ h3[id^="s3-"] {
         </div>
         <div class="infobox blue">
           <div class="infobox-title">Questions?</div>
-          <p>Pedagogical or document queries: Klára Hošková (<span data-email-user="klara.hoskova" data-email-domain="dsp-praha.cz" style="color:var(--navy-mid)"></span>) or Justin Steinmetz (<span data-email-user="justin.steinmetz" data-email-domain="dsp-praha.cz" style="color:var(--navy-mid)"></span>).</p>
-          <p>Travel and accommodation: Tamara Čakarmišova (<span data-email-user="tamara.cakarmisova" data-email-domain="dsp-praha.cz" style="color:var(--navy-mid)"></span>). Finance and per diems: Radka Rubricius (<span data-email-user="radka.rubricius" data-email-domain="dsp-praha.cz" style="color:var(--navy-mid)"></span>).</p>
+          <p>Pedagogical or document queries: Klára Hošková (<a href="/cdn-cgi/l/email-protection#22494e4350430c4a4d51494d5443624651520f5250434a430c4158" style="color:var(--navy-mid)"><span class="__cf_email__" data-cfemail="b6dddad7c4d798ded9c5ddd9c0d7f6d2c5c69bc6c4d7ded798d5cc">[email&#160;protected]</span></a>) or Justin Steinmetz (<a href="/cdn-cgi/l/email-protection#266c5355524f48087552434f484b43525c664255560b7654474e4708455c" style="color:var(--navy-mid)"><span class="__cf_email__" data-cfemail="014b747275686f2f527564686f6c64757b416572712c51736069602f627b">[email&#160;protected]</span></a>).</p>
+          <p>Travel and accommodation: Tamara Čakarmišova (<a href="/cdn-cgi/l/email-protection#cbbfaaa6aab9aae5a8aaa0aab9a6a2b8a4bdaa8bafb8bbe6bbb9aaa3aae5a8b1" style="color:var(--navy-mid)"><span class="__cf_email__" data-cfemail="6115000c0013004f02000a00130c08120e1700210512114c11130009004f021b">[email&#160;protected]</span></a>). Finance and per diems: Radka Rubricius (<a href="/cdn-cgi/l/email-protection#ff8d9e9b949ed18d8a9d8d969c968a8cbf9b8c8fd28f8d9e979ed19c85" style="color:var(--navy-mid)"><span class="__cf_email__" data-cfemail="5c2e3d38373d722e293e2e353f35292f1c382f2c712c2e3d343d723f26">[email&#160;protected]</span></a>).</p>
         </div>
       </div>
     </div>
@@ -1455,14 +1457,14 @@ h3[id^="s3-"] {
 
         <div class="infobox red">
           <div class="infobox-title">Cancellation or interruption of a mobility</div>
-          <p>If a mobility is cancelled, shortened, or interrupted for any reason — illness, safety concerns, or force majeure — notify the Erasmus coordinators immediately. They will handle DZS notification; delays in reporting can affect grant eligibility.</p>
+          <p>If a mobility is cancelled, shortened, or interrupted for any reason — including illness, safety concerns, or force majeure — notify the Erasmus coordinators immediately. The national agency (DZS) must be informed promptly. Failure to report changes in a timely manner may affect grant eligibility.</p>
         </div>
         <div class="infobox yellow">
-          <div class="infobox-title">Compliance requirements — all mobilities</div>
-          <p>All documents must be signed before departure — signatures cannot be backdated.</p>
-          <p>Travel and accommodation are booked through administration (Tamara Čakarmišova). Do not make independent arrangements unless explicitly authorised.</p>
-          <p>The Participant Report must be submitted via EU Survey within 30 days of the mobility end date. Late or missing reports can trigger partial grant repayment and affect the school's accreditation standing.</p>
-          <p>If anything changes during the mobility, notify the coordinator immediately so the Learning Agreement can be amended if needed.</p>
+          <div class="infobox-title">Mandatory compliance rules — applicable to all mobilities</div>
+          <p>All documents must be signed before departure. Retrospective signatures are not permitted.</p>
+          <p>Travel and accommodation must be booked through administration (Tamara Čakarmišova). Independent bookings are not permitted unless explicitly authorised.</p>
+          <p>The Participant Report must be submitted via EU Survey within 30 days of the mobility end date. Non-submission may require partial grant repayment and affect the school's future Erasmus+ funding eligibility.</p>
+          <p>If anything changes during the mobility, notify the coordinator immediately.</p>
           <p>Erasmus+ provides a grant contribution toward mobility costs — it is not a full reimbursement scheme. Financial processing is handled through the school finance office; contact Radka Rubricius for per diems and receipts.</p>
         </div>
         <div class="infobox green">
@@ -1532,7 +1534,7 @@ h3[id^="s3-"] {
           <li><span class="li-n">8</span>Confirm per diem arrangements with Radka Rubricius.</li>
           <li><span class="li-n">9</span>Prepare students before departure: cultural briefing, programme overview, behavioural expectations.</li>
           <li><span class="li-n">10</span>Check all documents are ready before departure — Learning Agreement, Participant Agreements, insurance, and any inclusion documentation.</li>
-          <li><span class="li-n">11</span><span>Collect a completed and signed Parental Consent Form from each student's parent or guardian before departure — covers travel documents, emergency contact, medical information, conduct declaration, and media consent. Template in <a href="#appendix-a" style="color:var(--navy-mid)">Appendix A</a>.</span></li>
+          <li><span class="li-n">11</span><span>Collect a completed and signed Parental Consent Form from each student's parent or guardian before departure — covers travel documents, emergency contact, medical information, conduct declaration, and media consent. Template in <a href="#appendix-a" style="color:var(--navy-mid)">Appendix A</a>. Retrospective signatures are not permitted.</span></li>
         </ol>
         <h4>During the Mobility</h4>
         <ol>
@@ -1546,7 +1548,7 @@ h3[id^="s3-"] {
         <ol>
           <li><span class="li-n">1</span>Conduct a reflection session with students.</li>
           <li><span class="li-n">2</span>Complete the ICES (Impact and Contribution to European Society) survey — this is an internal DSP impact survey used to track mobility outcomes across the school.</li>
-          <li><span class="li-n">3</span>Submit photos and a short written report to Tomáš Randýsek (<span data-email-user="tomas.randysek" data-email-domain="dsp-praha.cz" style="color:var(--navy-mid)"></span>) for PR and documentation.</li>
+          <li><span class="li-n">3</span>Submit photos and a short written report to Tomáš Randýsek (<a href="/cdn-cgi/l/email-protection#55213a3834267b27343b312c26303e15312625782527343d347b362f" style="color:var(--navy-mid)"><span class="__cf_email__" data-cfemail="3642595b574518445758524f45535d765245461b4644575e5718554c">[email&#160;protected]</span></a>) for PR and documentation.</li>
           <li><span class="li-n">4</span>Complete the impact reflection form and return all signed documents to the coordinator within one week.</li>
           <li><span class="li-n">5</span>Hand the signed Group Mobility List and any certificates to the coordinator for archiving.</li>
         </ol>
@@ -1554,10 +1556,10 @@ h3[id^="s3-"] {
         <h3 id="s3-4">3.4 Individual Participating Staff Workflow</h3>
         <div class="infobox blue">
           <div class="infobox-title">Your core obligations as an individual participant</div>
-          <p>All signatures must be in place before you travel — this is a grant condition, not a formality.</p>
+          <p>Documents must be signed before departure. Retrospective signatures are not permitted.</p>
           <p>Keep copies of everything: Participant Agreement, Learning Agreement, travel records, and receipts.</p>
-          <p>Your Participant Report must be submitted within 30 days of returning. If you're unsure how, the coordinator can help.</p>
-          <p>If anything changes during the mobility, let the coordinator know straight away.</p>
+          <p>Submit your Participant Report on time. Non-completion may affect the school's future Erasmus+ eligibility.</p>
+          <p>If anything changes during the mobility, notify the coordinator immediately.</p>
         </div>
         <h4>Before You Leave</h4>
         <ul>
@@ -1612,16 +1614,17 @@ h3[id^="s3-"] {
         <div class="sec-arrow">⌄</div>
       </button>
       <div class="section-body">
-        <p>The post-mobility phase is where the programme's paper trail gets closed out — and where the most common administrative failures occur. This section covers what needs to happen, who is responsible, and how long to keep documents.</p>
+        <p>All Erasmus+ mobilities require a defined set of reporting and documentation actions after the activity ends. This section specifies what is required, who is responsible, and how documents should be stored.</p>
 
         <h3>4.1 Participant Report (EU Survey)</h3>
-        <p>The Participant Report is mandatory for most activity types (see Section 2). It is completed online through the EU Survey platform — the link arrives automatically at the participant's registered email address after the mobility ends.</p>
+        <p>The Participant Report is mandatory for most activity types (see Section 2). It is completed online through the EU Survey platform; the link is sent automatically to the participant's registered email address.</p>
         <div class="infobox blue">
           <div class="infobox-title">Key facts about the Participant Report</div>
           <p>Deadline: within 30 days of the last day of the mobility.</p>
           <p>Platform: EU Survey (link sent automatically to participant's registered email).</p>
           <p>Content: learning outcomes, quality of the host, linguistic preparation, and personal impact.</p>
-          <p>Missing reports can result in partial grant repayment and affect the school's accreditation standing — the coordinator should follow up with anyone who hasn't submitted by day 20.</p>
+          <p>Consequence of non-completion: DZS may require partial grant repayment. Non-submission also affects the school's future Erasmus+ funding eligibility and accreditation standing.</p>
+          <p>The coordinator should monitor completion and follow up with anyone who has not submitted by day 20.</p>
         </div>
 
         <h3>4.2 LA Confirmation &amp; Europass Mobility Certificate</h3>
@@ -1632,7 +1635,7 @@ h3[id^="s3-"] {
         </ul>
 
         <h3>4.3 Dissemination Requirement</h3>
-        <p>Sharing mobility experiences with colleagues, students, and the wider community is a grant requirement — and the most direct way to embed what participants have learned into school life. Keep a brief record of each dissemination activity.</p>
+        <p>Erasmus+ grant agreements require the school to demonstrate that mobility experiences are shared with colleagues, students, and/or the wider community. All dissemination activities must be logged.</p>
         <ul>
           <li><span class="li-dot">›</span>A short written report or contribution to the staff newsletter.</li>
           <li><span class="li-dot">›</span>A presentation at a staff meeting or professional development day.</li>
@@ -1641,7 +1644,7 @@ h3[id^="s3-"] {
         </ul>
         <div class="infobox blue">
           <div class="infobox-title">PR contact</div>
-          <p>Send photos, reports, and any dissemination materials to Tomáš Randýsek: <span data-email-user="tomas.randysek" data-email-domain="dsp-praha.cz" style="color:var(--navy-mid)"></span></p>
+          <p>Send photos, reports, and any dissemination materials to Tomáš Randýsek: <a href="/cdn-cgi/l/email-protection#43372c2e22306d31222d273a302628032730336e3331222b226d2039" style="color:var(--navy-mid)"><span class="__cf_email__" data-cfemail="9febf0f2feecb1edfef1fbe6ecfaf4dffbecefb2efedfef7feb1fce5">[email&#160;protected]</span></a></p>
           <p>Keep a record of all dissemination activity (date, format, audience) — this may be required for the coordinator's final grant report to DZS.</p>
         </div>
 
@@ -1687,10 +1690,10 @@ h3[id^="s3-"] {
           <thead><tr><th>Area</th><th>Responsible</th><th>Contact</th><th>Key Tasks</th></tr></thead>
           <tbody>
             <tr><td>Strategic planning</td><td>Erasmus team + school leadership</td><td>—</td><td>Project decisions, yearly planning, accreditation oversight</td></tr>
-            <tr><td>Pedagogical coordination</td><td>Klára Hošková<br>Justin Steinmetz</td><td><span data-email-user="klara.hoskova" data-email-domain="dsp-praha.cz" style="color:var(--navy-mid);font-size:12px;"></span><br><span data-email-user="justin.steinmetz" data-email-domain="dsp-praha.cz" style="color:var(--navy-mid);font-size:12px;"></span></td><td>Goal alignment, Learning Agreements, teacher support, document sign-off</td></tr>
-            <tr><td>Travel &amp; accommodation</td><td>Tamara Čakarmišova<br>(Administration)</td><td><span data-email-user="tamara.cakarmisova" data-email-domain="dsp-praha.cz" style="color:var(--navy-mid);font-size:12px;"></span></td><td>All transport and accommodation bookings — contact before making any arrangements</td></tr>
-            <tr><td>Finance &amp; per diems</td><td>Jitka Špetová<br>Radka Rubricius</td><td><span data-email-user="jitka.spetova" data-email-domain="dsp-praha.cz" style="color:var(--navy-mid);font-size:12px;"></span><br><span data-email-user="radka.rubricius" data-email-domain="dsp-praha.cz" style="color:var(--navy-mid);font-size:12px;"></span></td><td>Erasmus budget oversight (Jitka); per diem rates, receipts, and financial processing (Radka)</td></tr>
-            <tr><td>PR &amp; dissemination</td><td>Tomáš Randýsek</td><td><span data-email-user="tomas.randysek" data-email-domain="dsp-praha.cz" style="color:var(--navy-mid);font-size:12px;"></span></td><td>School website, social media, documentation, dissemination coordination</td></tr>
+            <tr><td>Pedagogical coordination</td><td>Klára Hošková<br>Justin Steinmetz</td><td><a href="/cdn-cgi/l/email-protection#305b5c5142511e585f435b5f4651705443401d40425158511e534a" style="color:var(--navy-mid);font-size:12px;"><span class="__cf_email__" data-cfemail="650e090417044b0d0a160e0a130425011615481517040d044b061f">[email&#160;protected]</span></a><br><a href="/cdn-cgi/l/email-protection#c68cb3b5b2afa8e895b2a3afa8aba3b2bc86a2b5b6eb96b4a7aea7e8a5bc" style="color:var(--navy-mid);font-size:12px;"><span class="__cf_email__" data-cfemail="ca80bfb9bea3a4e499beafa3a4a7afbeb08aaeb9bae79ab8aba2abe4a9b0">[email&#160;protected]</span></a></td><td>Goal alignment, Learning Agreements, teacher support, document sign-off</td></tr>
+            <tr><td>Travel &amp; accommodation</td><td>Tamara Čakarmišova<br>(Administration)</td><td><a href="/cdn-cgi/l/email-protection#1d697c707c6f7c337e7c767c6f70746e726b7c5d796e6d306d6f7c757c337e67" style="color:var(--navy-mid);font-size:12px;"><span class="__cf_email__" data-cfemail="592d3834382b38773a3832382b34302a362f38193d2a2974292b383138773a23">[email&#160;protected]</span></a></td><td>All transport and accommodation bookings — contact before making any arrangements</td></tr>
+            <tr><td>Finance &amp; per diems</td><td>Jitka Špetová<br>Radka Rubricius</td><td><a href="/cdn-cgi/l/email-protection#f892918c9399d68b889d8c978e99b89c8b88d5888a999099d69b82" style="color:var(--navy-mid);font-size:12px;"><span class="__cf_email__" data-cfemail="046e6d706f652a777461706b726544607774297476656c652a677e">[email&#160;protected]</span></a><br><a href="/cdn-cgi/l/email-protection#f98b989d9298d78b8c9b8b909a908c8ab99d8a89d4898b989198d79a83" style="color:var(--navy-mid);font-size:12px;"><span class="__cf_email__" data-cfemail="7a081b1e111b54080f18081319130f093a1e090a570a081b121b541900">[email&#160;protected]</span></a></td><td>Erasmus budget oversight (Jitka); per diem rates, receipts, and financial processing (Radka)</td></tr>
+            <tr><td>PR &amp; dissemination</td><td>Tomáš Randýsek</td><td><a href="/cdn-cgi/l/email-protection#abdfc4c6cad885d9cac5cfd2d8cec0ebcfd8db86dbd9cac3ca85c8d1" style="color:var(--navy-mid);font-size:12px;"><span class="__cf_email__" data-cfemail="a8dcc7c5c9db86dac9c6ccd1dbcdc3e8ccdbd885d8dac9c0c986cbd2">[email&#160;protected]</span></a></td><td>School website, social media, documentation, dissemination coordination</td></tr>
           </tbody>
         </table>
       </div>
@@ -1705,12 +1708,12 @@ h3[id^="s3-"] {
       </button>
       <div class="section-body">
         <div class="contacts-grid">
-          <div class="contact-row"><span class="contact-role">Erasmus+ Coordinator</span><span class="contact-name">Klára Hošková</span><span data-email-user="klara.hoskova" data-email-domain="dsp-praha.cz" class="contact-email"></span></div>
-          <div class="contact-row"><span class="contact-role">Erasmus+ Co-coordinator</span><span class="contact-name">Justin Steinmetz</span><span data-email-user="justin.steinmetz" data-email-domain="dsp-praha.cz" class="contact-email"></span></div>
-          <div class="contact-row"><span class="contact-role">Travel &amp; accommodation</span><span class="contact-name">Tamara Čakarmišova</span><span data-email-user="tamara.cakarmisova" data-email-domain="dsp-praha.cz" class="contact-email"></span></div>
-          <div class="contact-row"><span class="contact-role">Finance oversight</span><span class="contact-name">Jitka Špetová</span><span data-email-user="jitka.spetova" data-email-domain="dsp-praha.cz" class="contact-email"></span></div>
-          <div class="contact-row"><span class="contact-role">Per diems &amp; receipts</span><span class="contact-name">Radka Rubricius</span><span data-email-user="radka.rubricius" data-email-domain="dsp-praha.cz" class="contact-email"></span></div>
-          <div class="contact-row"><span class="contact-role">PR &amp; dissemination</span><span class="contact-name">Tomáš Randýsek</span><span data-email-user="tomas.randysek" data-email-domain="dsp-praha.cz" class="contact-email"></span></div>
+          <div class="contact-row"><span class="contact-role">Erasmus+ Coordinator</span><span class="contact-name">Klára Hošková</span><a href="/cdn-cgi/l/email-protection#72191e1300135c1a1d01191d0413321601025f0200131a135c1108" class="contact-email"><span class="__cf_email__" data-cfemail="7e15121f0c1f5016110d1511081f3e1a0d0e530e0c1f161f501d04">[email&#160;protected]</span></a></div>
+          <div class="contact-row"><span class="contact-role">Erasmus+ Co-coordinator</span><span class="contact-name">Justin Steinmetz</span><a href="/cdn-cgi/l/email-protection#347e4147405d5a1a6740515d5a5951404e74504744196446555c551a574e" class="contact-email"><span class="__cf_email__" data-cfemail="743e0107001d1a5a2700111d1a1911000e34100704592406151c155a170e">[email&#160;protected]</span></a></div>
+          <div class="contact-row"><span class="contact-role">Travel &amp; accommodation</span><span class="contact-name">Tamara Čakarmišova</span><a href="/cdn-cgi/l/email-protection#0377626e6271622d60626862716e6a706c7562436770732e7371626b622d6079" class="contact-email"><span class="__cf_email__" data-cfemail="2753464a4655460944464c46554a4e54485146674354570a5755464f4609445d">[email&#160;protected]</span></a></div>
+          <div class="contact-row"><span class="contact-role">Finance oversight</span><span class="contact-name">Jitka Špetová</span><a href="/cdn-cgi/l/email-protection#9ff5f6ebf4feb1eceffaebf0e9fedffbecefb2efedfef7feb1fce5" class="contact-email"><span class="__cf_email__" data-cfemail="8ce6e5f8e7eda2fffce9f8e3faedcce8fffca1fcfeede4eda2eff6">[email&#160;protected]</span></a></div>
+          <div class="contact-row"><span class="contact-role">Per diems &amp; receipts</span><span class="contact-name">Radka Rubricius</span><a href="/cdn-cgi/l/email-protection#681a090c0309461a1d0a1a010b011d1b280c1b1845181a090009460b12" class="contact-email"><span class="__cf_email__" data-cfemail="2b594a4f404a05595e49594248425e586b4f585b065b594a434a054851">[email&#160;protected]</span></a></div>
+          <div class="contact-row"><span class="contact-role">PR &amp; dissemination</span><span class="contact-name">Tomáš Randýsek</span><a href="/cdn-cgi/l/email-protection#86f2e9ebe7f5a8f4e7e8e2fff5e3edc6e2f5f6abf6f4e7eee7a8e5fc" class="contact-email"><span class="__cf_email__" data-cfemail="b8ccd7d5d9cb96cad9d6dcc1cbddd3f8dccbc895c8cad9d0d996dbc2">[email&#160;protected]</span></a></div>
         </div>
 
         <h3>External Resources</h3>
@@ -1719,7 +1722,7 @@ h3[id^="s3-"] {
           <tbody>
             <tr><td>School address</td><td>Schwarzenberská 1/700, 158 00 Praha 5 &nbsp;|&nbsp; +420 235 310 544</td></tr>
             <tr><td>School website</td><td><a href="https://www.dsp-praha.cz" style="color:var(--navy-mid)">www.dsp-praha.cz</a></td></tr>
-            <tr><td>DZS (National Agency CZ)</td><td><a href="https://www.dzs.cz" style="color:var(--navy-mid)">www.dzs.cz</a> &nbsp;|&nbsp; <span data-email-user="info" data-email-domain="dzs.cz"></span> &nbsp;|&nbsp; +420 221 850 100</td></tr>
+            <tr><td>DZS (National Agency CZ)</td><td><a href="https://www.dzs.cz" style="color:var(--navy-mid)">www.dzs.cz</a> &nbsp;|&nbsp; <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dbb2b5bdb49bbfa1a8f5b8a1">[email&#160;protected]</a> &nbsp;|&nbsp; +420 221 850 100</td></tr>
             <tr><td>DZS address</td><td>Na Poříčí 1035/4, 110 00 Praha 1</td></tr>
             <tr><td>EU Survey (Participant Reports)</td><td><a href="https://ec.europa.eu/eusurvey" style="color:var(--navy-mid)">ec.europa.eu/eusurvey</a></td></tr>
             <tr><td>Europass Mobility</td><td><a href="https://europass.europa.eu" style="color:var(--navy-mid)">europass.europa.eu</a></td></tr>
@@ -1747,8 +1750,8 @@ h3[id^="s3-"] {
       <div class="section-body">
         <p>The following template must be completed and signed by the parent or guardian of every student participant before departure on any Erasmus+ group mobility. Collect the original signed form before travel. Digital submissions (scan or photograph by email) are acceptable. Originals must be archived in the Erasmus+ folder.</p>
         <div class="infobox red">
-          <div class="infobox-title">Return deadline</div>
-          <p>The form must be signed and returned before the departure date.</p>
+          <div class="infobox-title">Important: Retrospective signatures are not permitted</div>
+          <p>The form must be returned before the departure date.</p>
         </div>
 
         <div class="download-card">
@@ -2140,25 +2143,6 @@ function printChecklist() {
   win.document.close();
   setTimeout(() => win.print(), 400);
 }
-
-// ── EMAIL OBFUSCATION FIX ──
-// Builds email links at runtime so no static @ appears in source
-function buildEmails() {
-  document.querySelectorAll('[data-email-user]').forEach(function(el) {
-    var user = el.getAttribute('data-email-user');
-    var domain = el.getAttribute('data-email-domain');
-    var address = user + '@' + domain;
-    var a = document.createElement('a');
-    a.href = 'mailto:' + address;
-    a.textContent = address;
-    // Copy inline style if present
-    if (el.getAttribute('style')) a.setAttribute('style', el.getAttribute('style'));
-    // Copy class if present
-    if (el.className) a.className = el.className;
-    el.parentNode.replaceChild(a, el);
-  });
-}
-document.addEventListener('DOMContentLoaded', buildEmails);
 </script>
 </body>
 </html>
